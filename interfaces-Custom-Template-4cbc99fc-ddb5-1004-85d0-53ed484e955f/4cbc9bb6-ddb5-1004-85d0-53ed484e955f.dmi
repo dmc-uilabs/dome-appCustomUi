@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<modelinterface type="DomeModelInterface" id="4cbc9bb6-ddb5-1004-85d0-53ed484e955f" name="Custom Interface">
+    <interfaceinfo>
+        <version>0.0.1</version>
+    </interfaceinfo>
+    <parameters>
+        <parameter id="4cbc9bbb-ddb5-1004-85d0-53ed484e955f" name="inputTemplate">
+            <currentType value="String"/>
+            <data>
+                <dataobject type="String">&lt;div&gt;&lt;input type="text" id="inputName" placeholder="{{inputName}}"&gt;&lt;/input&gt;&lt;br&gt;&lt;button ng-click="run()"&gt;Run&lt;/button&gt;&lt;/div&gt;</dataobject>
+            </data>
+        </parameter>
+        <parameter id="4cbc9bbc-ddb5-1004-85d0-53ed484e955f" name="inputName">
+            <currentType value="String"/>
+            <data>
+                <dataobject type="String">Enter name here</dataobject>
+            </data>
+        </parameter>
+        <parameter id="4cbc9bbd-ddb5-1004-85d0-53ed484e955f" name="outputTemplate">
+            <currentType value="String"/>
+            <data>
+                <dataobject type="String">output template</dataobject>
+            </data>
+        </parameter>
+        <parameter id="4cbc9bea-ddb5-1004-85d0-53ed484e955f" name="outputMsg">
+            <currentType value="String"/>
+            <data>
+                <dataobject type="String">default</dataobject>
+            </data>
+        </parameter>
+    </parameters>
+    <visualizations/>
+    <relations/>
+    <contexts>
+        <context id="IFACE_MODEL_CXT" name="Model View"/>
+    </contexts>
+    <views>
+        <view name="Build View">
+            <context id="IFACE_BUILD_CXT" name="Build View">
+                <modelobjects>
+                    <parameter name="inputTemplate" idRef="4cbc9bbb-ddb5-1004-85d0-53ed484e955f"/>
+                    <parameter name="inputName" idRef="4cbc9bbc-ddb5-1004-85d0-53ed484e955f"/>
+                    <parameter name="outputTemplate" idRef="4cbc9bbd-ddb5-1004-85d0-53ed484e955f"/>
+                    <parameter name="outputMsg" idRef="4cbc9bea-ddb5-1004-85d0-53ed484e955f"/>
+                </modelobjects>
+            </context>
+        </view>
+        <view name="Interface Causality View">
+            <filter id="INPUTS_FILTER" name="Inputs">
+                <parameters>
+                    <parameter name="inputName" idRef="4cbc9bbc-ddb5-1004-85d0-53ed484e955f"/>
+                    <parameter name="inputTemplate" idRef="4cbc9bbb-ddb5-1004-85d0-53ed484e955f"/>
+                </parameters>
+            </filter>
+            <filter id="OUTPUTS_FILTER" name="Outputs">
+                <parameters>
+                    <parameter name="outputMsg" idRef="4cbc9bea-ddb5-1004-85d0-53ed484e955f" causality="Result"/>
+                    <parameter name="outputTemplate" idRef="4cbc9bbd-ddb5-1004-85d0-53ed484e955f" causality="Result"/>
+                </parameters>
+            </filter>
+            <filter id="INDETERMINATES_FILTER" name="Indeterminates"/>
+        </view>
+    </views>
+    <directedGraph id="4cbc9bb6-ddb5-1004-85d0-53ed484e955f">
+        <nodes>
+            <node idRef="4cbc9bbb-ddb5-1004-85d0-53ed484e955f"/>
+            <node idRef="4cbc9bbc-ddb5-1004-85d0-53ed484e955f"/>
+            <node idRef="4cbc9bbd-ddb5-1004-85d0-53ed484e955f"/>
+            <node idRef="4cbc9bea-ddb5-1004-85d0-53ed484e955f"/>
+        </nodes>
+        <arcs>
+            <from idRef="4cbc9bbb-ddb5-1004-85d0-53ed484e955f">
+                <to idRef="4cbc9bbd-ddb5-1004-85d0-53ed484e955f"/>
+                <to idRef="4cbc9bea-ddb5-1004-85d0-53ed484e955f"/>
+            </from>
+            <from idRef="4cbc9bbc-ddb5-1004-85d0-53ed484e955f">
+                <to idRef="4cbc9bbd-ddb5-1004-85d0-53ed484e955f"/>
+                <to idRef="4cbc9bea-ddb5-1004-85d0-53ed484e955f"/>
+            </from>
+        </arcs>
+    </directedGraph>
+    <interfaceToRelParamMap>
+        <iToRpMap relParamId="4cbc9bbb-ddb5-1004-85d0-53ed484e955f" ifaceId="4cbc9a12-ddb5-1004-85d0-53ed484e955f"/>
+        <iToRpMap relParamId="4cbc9bbc-ddb5-1004-85d0-53ed484e955f" ifaceId="4cbc9ba0-ddb5-1004-85d0-53ed484e955f"/>
+        <iToRpMap relParamId="4cbc9bbd-ddb5-1004-85d0-53ed484e955f" ifaceId="4cbc9a18-ddb5-1004-85d0-53ed484e955f"/>
+        <iToRpMap relParamId="4cbc9bea-ddb5-1004-85d0-53ed484e955f" ifaceId="4cbc9bd0-ddb5-1004-85d0-53ed484e955f"/>
+    </interfaceToRelParamMap>
+</modelinterface>

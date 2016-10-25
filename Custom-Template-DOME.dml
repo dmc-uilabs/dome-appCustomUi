@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<model type="DomeModel" id="4cbc99fc-ddb5-1004-85d0-53ed484e955f" name="Output Demo">
+    <modelinfo>
+        <version>0.0.0</version>
+    </modelinfo>
+    <parameters/>
+    <relations>
+        <relation type="Procedural" id="4cbc9a0a-ddb5-1004-85d0-53ed484e955f" name="Procedural Relation">
+            <parameters>
+                <parameter id="4cbc9a12-ddb5-1004-85d0-53ed484e955f" name="inputTemplate">
+                    <currentType value="String"/>
+                    <data>
+                        <dataobject type="String">&lt;div&gt;&lt;input type="text" id="inputName" placeholder="{{inputName}}"&gt;&lt;/input&gt;&lt;br&gt;&lt;button ng-click="run()"&gt;Run&lt;/button&gt;&lt;/div&gt;</dataobject>
+                    </data>
+                </parameter>
+                <parameter id="4cbc9a18-ddb5-1004-85d0-53ed484e955f" name="outputTemplate">
+                    <currentType value="String"/>
+                    <data>
+                        <dataobject type="String">output template</dataobject>
+                    </data>
+                </parameter>
+                <parameter id="4cbc9ba0-ddb5-1004-85d0-53ed484e955f" name="inputName">
+                    <currentType value="String"/>
+                    <data>
+                        <dataobject type="String">Enter name here</dataobject>
+                    </data>
+                </parameter>
+                <parameter id="4cbc9bd0-ddb5-1004-85d0-53ed484e955f" name="outputMsg">
+                    <currentType value="String"/>
+                    <data>
+                        <dataobject type="String">default</dataobject>
+                    </data>
+                </parameter>
+            </parameters>
+            <body><![CDATA[outputMsg = "Hello " + inputName
+outputTemplate = "<div>{{outputMsg}}</div>"]]></body>
+            <dependencies>
+                <dependency idRef="4cbc9a18-ddb5-1004-85d0-53ed484e955f">
+                    <parameter name="inputTemplate" idRef="4cbc9a12-ddb5-1004-85d0-53ed484e955f" idRelationRef="4cbc9a0a-ddb5-1004-85d0-53ed484e955f"/>
+                    <parameter name="inputName" idRef="4cbc9ba0-ddb5-1004-85d0-53ed484e955f" idRelationRef="4cbc9a0a-ddb5-1004-85d0-53ed484e955f"/>
+                </dependency>
+                <dependency idRef="4cbc9bd0-ddb5-1004-85d0-53ed484e955f">
+                    <parameter name="inputTemplate" idRef="4cbc9a12-ddb5-1004-85d0-53ed484e955f" idRelationRef="4cbc9a0a-ddb5-1004-85d0-53ed484e955f"/>
+                    <parameter name="inputName" idRef="4cbc9ba0-ddb5-1004-85d0-53ed484e955f" idRelationRef="4cbc9a0a-ddb5-1004-85d0-53ed484e955f"/>
+                </dependency>
+            </dependencies>
+        </relation>
+    </relations>
+    <visualizations/>
+    <contexts>
+        <context id="BUILD_CXT" name="Build View">
+            <modelobjects>
+                <relation name="Procedural Relation" idRef="4cbc9a0a-ddb5-1004-85d0-53ed484e955f"/>
+            </modelobjects>
+        </context>
+        <context id="FILE_CXT" name="Files"/>
+    </contexts>
+    <mappings/>
+    <auxfiles/>
+</model>
